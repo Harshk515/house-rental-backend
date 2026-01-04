@@ -1,16 +1,16 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-d5ch8cq4d50c73811sc0-a.singapore-postgres.render.com:5432/house_rental_i62x
-    username: house_rental_i62x_user
-    password: 8pxVsMsH963gMoR6Px9UcIM8TZATm1Xb
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
 
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
@@ -22,5 +22,5 @@ spring:
       max-request-size: 10MB
 
 jwt:
-  secret: mysecretkey123456789mysecretkey1234
+  secret: ${JWT_SECRET}
   expiration: 86400000
