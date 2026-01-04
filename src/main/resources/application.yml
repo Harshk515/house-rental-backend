@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://dpg-d5ch8cq4d50c73811sc0-a.singapore-postgres.render.com:5432/house_rental_i62x
+    username: house_rental_i62x_user
+    password: 8pxVsMsH963gMoR6Px9UcIM8TZATm1Xb
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+jwt:
+  secret: mysecretkey123456789mysecretkey1234
+  expiration: 86400000
